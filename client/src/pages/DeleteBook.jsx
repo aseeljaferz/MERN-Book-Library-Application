@@ -15,7 +15,7 @@ const DeleteBook = () => {
     try {
       setLoading(true);
       const res = await axios.delete(
-        `http://localhost:5555/books/${id}`
+        `https://mern-book-library-application.onrender.com/books/${id}`
       );
       if (res.status == 200) {
         setLoading(false);

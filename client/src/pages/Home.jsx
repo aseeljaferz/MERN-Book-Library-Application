@@ -15,12 +15,11 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('card');
     const [searchQuery, setSearchQuery] = useState('');
-    // const [searchCriteria, setSearchCriteria] = useState('title');
     const { enqueueSnackbar } = useSnackbar();
 
     const resHome = async () => {
         try {
-            const res = await axios.get(`http://localhost:5555/books`);
+            const res = await axios.get(`https://mern-book-library-application.onrender.com/books`);
             if (res.status == 200) {
                 setBooks(res.data.data);
                 setLoading(false);

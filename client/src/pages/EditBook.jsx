@@ -19,7 +19,7 @@ const EditBook = () => {
 
   const editFun = async () =>{
     try {
-      const res = await axios .get(`http://localhost:5555/books/${id}`);
+      const res = await axios .get(`https://mern-book-library-application.onrender.com/books/${id}`);
         if(res.status==200){
           setTitle(res.data.title);
           setAuthor(res.data.author);
@@ -52,7 +52,7 @@ const EditBook = () => {
     };
     setLoading(true);
     try{
-      const edit = await axios .put(`http://localhost:5555/books/${id}`, data);
+      const edit = await axios .put(`https://mern-book-library-application.onrender.com/books/${id}`, data);
       setLoading(false);
       enqueueSnackbar('Book Edited successfully', {variant: 'success'});
       navigate('/');

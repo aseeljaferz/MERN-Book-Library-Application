@@ -12,13 +12,12 @@ const ShowBook = () => {
   const resShow = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5555/books/${id}`
+        `https://mern-book-library-application.onrender.com/books/${id}`
       );
       if (res.status == 200) {
         setBook(res.data);
         setLoading(false);
       } else {
-        // alert(res.data);
         console.log(res.status);
       }
     } catch (error) {
@@ -30,16 +29,6 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     resShow();
-    // axios
-    //   .get(`http://localhost:5555/books/${id}`)
-    //   .then((res) => {
-    //     setBook(res.data);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     setLoading(false);
-    //   })
   }, [id]);
 
   return (
