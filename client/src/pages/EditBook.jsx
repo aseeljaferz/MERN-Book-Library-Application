@@ -10,6 +10,7 @@ const EditBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
+  const [aboutBook, setAboutBook] = useState('')
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
@@ -22,6 +23,7 @@ const EditBook = () => {
           setTitle(res.data.title);
           setAuthor(res.data.author);
           setPublishYear(res.data.publishYear);
+          setAboutBook(res.data.aboutBook);
           setLoading(false);
         }else{
           setLoading(false);
@@ -43,6 +45,7 @@ const EditBook = () => {
       title,
       author,
       publishYear,
+      aboutBook
     };
     setLoading(true);
     try{
@@ -89,6 +92,14 @@ const EditBook = () => {
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
             className='border-2 border-grey-500 px-4 py-2 w-full'
+          />
+        </div>
+        <div className="my-4">
+          <div className="text-xl mr-4 text-grey-500">About Book</div>
+          <textarea 
+            value={aboutBook}
+            onChange={(e) => setAboutBook(e.target.value)}
+            className="border-2 border-grey-500 px-4 py-2 w-full"
           />
         </div>
         <button className='p-2 bg-sky-300 m-8' onClick={handlEditBook}>

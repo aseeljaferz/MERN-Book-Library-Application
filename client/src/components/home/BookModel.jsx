@@ -12,7 +12,7 @@ const BookModel = ({ book, onClose }) => {
       <BackButton />
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[600px] max-w-full h-[400px] bg-white rounded-xl p-4 flex flex-col relative overflow-y-auto m-2"
+        className="w-[600px] max-w-full h-[400px] bg-white rounded-xl p-4 flex flex-col relative overflow-x-auto m-2"
       >
         <AiOutlineClose
           className="absolute right-6 top-6 text-red-600 cursor-pointer"
