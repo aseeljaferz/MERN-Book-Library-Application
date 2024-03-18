@@ -8,8 +8,8 @@ const app = express();
 
 //middleware for parsing request body
 app.use(express.json());
-//middleware for handling CORS policy
 
+//middleware for handling CORS policy
 app.use(cors())
 //      or
 // app.use(

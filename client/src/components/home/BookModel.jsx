@@ -32,14 +32,7 @@ const BookModel = ({ book, onClose }) => {
         </div>
         <p className="mt-4">Any thing You want to show</p>
         <p className="my-2 relative" >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, sunt
-          laborum. Ipsam doloremque perspiciatis expedita itaque. Nisi culpa
-          minima sequi officiis libero est blanditiis minus praesentium nesciunt
-          expedita, quia eos! Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Dolorum accusantium eveniet dolores beatae et veritatis tenetur
-          quod officia fugit ut voluptate laudantium optio numquam autem
-          necessitatibus, ab distinctio natus odio.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est architecto odio dolores officia ab sint hic, ipsam, quae culpa quo, sed neque corporis facilis optio eius ducimus? Minima, similique?
+          {book.aboutBook}
         </p>
       </div>
     </div>

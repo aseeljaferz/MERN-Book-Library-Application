@@ -1,8 +1,3 @@
-import { Link } from "react-router-dom";
-import { PiBookOpenTextLight } from 'react-icons/pi';
-import { BiInfoCircle, BiUserCircle } from 'react-icons/bi';
-import { AiOutlineEdit } from "react-icons/ai";
-import { MdOutlineDelete } from "react-icons/md";
 import BooksSingleCard from "./BooksSingleCard";
 
 const BooksCard = ({ books, searchQuery}) => {
@@ -18,4 +13,4 @@ const BooksCard = ({ books, searchQuery}) => {
     )
 }
 
-export default BooksCard
+export default BooksCard;

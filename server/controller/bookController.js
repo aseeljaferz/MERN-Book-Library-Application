@@ -2,7 +2,7 @@ import { Book } from "../models/bookModel.js";
 
 export const createBook = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.author || !req.body.publishYear) {
+    if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook) {
       return res.status(200).send({
         message: "send all required files: title, author, publishYear",
       });
@@ -11,6 +11,7 @@ export const createBook = async (req, res) => {
       title: req.body.title,
       author: req.body.author,
       publishYear: req.body.publishYear,
+      aboutBook: req.body.aboutBook,
     };
 
     const book = await Book.create(newBook);
@@ -24,7 +25,7 @@ export const createBook = async (req, res) => {
 export const displayBook = async (req, res) => {
   try {
     const books = await Book.find({});
-    console.log(Book);
+    console.log(books);
 
     return res.status(200).json({
       count: books.length,
@@ -49,7 +50,7 @@ export const displaySingleBook = async (req, res) => {
 
 export const updateBook = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.author || !req.body.publishYear) {
+    if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook) {
       return res.status(200).send({
         message: "send all required files: title, author, publishYear",
       });
