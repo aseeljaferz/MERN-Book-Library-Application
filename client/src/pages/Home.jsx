@@ -13,7 +13,7 @@ import { useSnackbar } from 'notistack';
 const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [showType, setShowType] = useState('table');
+    const [showType, setShowType] = useState('card');
     const [searchQuery, setSearchQuery] = useState('');
     // const [searchCriteria, setSearchCriteria] = useState('title');
     const { enqueueSnackbar } = useSnackbar();
@@ -44,15 +44,15 @@ const Home = () => {
             <div className='flex justify-center items-center gap-x-4 ml-20 max-sm:ml-0'>
                 <button
                     className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
-                    onClick={() => { setShowType('table') }}
-                >
-                    table
-                </button>
-                <button
-                    className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
                     onClick={() => { setShowType('card') }}
                 >
                     Card
+                </button>
+                <button
+                    className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
+                    onClick={() => { setShowType('table') }}
+                >
+                    table
                 </button>
             </div>
             <div className='flex justify-evenly items-center max-sm:justify-between'>
@@ -68,7 +68,7 @@ const Home = () => {
                     <MdOutlineAddBox className='text-sky-800 text-4xl' />
                 </Link>
             </div>
-            {loading ? <Spinner /> : showType == 'table' ? (<BooksTable books={books} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />) : (<BooksCard books={books} searchQuery={searchQuery}/>)}
+            {loading ? <Spinner /> : showType == 'card' ? (<BooksCard books={books} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />) : (<BooksTable books={books} searchQuery={searchQuery}/>)}
         </div>
     )
 }

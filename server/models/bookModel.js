@@ -17,6 +17,10 @@ const bookSchema = mongoose.Schema(
         aboutBook: {
             type: String,
             required: true,
+        },
+        geners: {
+            type: String,
+            required: true,
         }
     },
     {

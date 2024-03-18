@@ -26,6 +26,9 @@ const BooksTable = ({ books, searchQuery }) => {
             Author
           </th>
           <th className="border border-slate-600 rounded-md max-md:hidden">
+            Geners
+          </th>
+          <th className="border border-slate-600 rounded-md max-md:hidden">
             Publish Year
           </th>
           <th className="border border-slate-600 rounded-md">Operations</th>
@@ -46,12 +49,15 @@ const BooksTable = ({ books, searchQuery }) => {
                 {book.author}
               </td>
               <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+                {book.geners}
+              </td>
+              <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                 {book.publishYear}
               </td>
               <td className="border border-slate-700 rounded-md text-center">
                 <div className="flex justify-center gap-x-4">
                   <BiShow
-                    className="text-3xl text-blue-800 hover:text-black cursor-pointer"
+                    className="text-2xl text-sky-800"
                     onClick={() => setShowModel(true)}
                   />
                   <Link to={`/books/details/${book._id}`}>

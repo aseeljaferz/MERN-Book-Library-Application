@@ -6,7 +6,9 @@ const BooksCard = ({ books, searchQuery}) => {
     })
     return (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filterBooks.map((item, index) => (
+            {filterBooks
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .map((item, index) => (
                 <BooksSingleCard key={item._id} book={item} index={index} />
             ))}
         </div>

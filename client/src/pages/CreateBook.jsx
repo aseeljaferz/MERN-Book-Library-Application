@@ -9,6 +9,7 @@ const CreateBook = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [publishYear, setPublishYear] = useState("");
+  const [geners, setGeners] = useState("");
   const [aboutBook, setAboutBook] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const CreateBook = () => {
       title,
       author,
       publishYear,
+      geners,
       aboutBook
     };
 
@@ -66,6 +68,15 @@ const CreateBook = () => {
             type="number"
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
+            className="border-2 border-grey-500 px-4 py-2 w-full"
+          />
+        </div>
+        <div className="my-4">
+          <div className="text-xl mr-4 text-grey-500">Geners</div>
+          <input
+            type="text"
+            value={geners}
+            onChange={(e) => setGeners(e.target.value)}
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
         </div>

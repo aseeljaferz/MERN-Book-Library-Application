@@ -1,6 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { PiBookOpenTextLight } from "react-icons/pi";
-import { BiUserCircle } from "react-icons/bi";
+import { BiUserCircle, BiMovie } from "react-icons/bi";
 import BackButton from "../BackButton";
 
 const BookModel = ({ book, onClose }) => {
@@ -21,16 +21,19 @@ const BookModel = ({ book, onClose }) => {
         <h2 className="w-fit px-4 py-1 bg-red-300 rounded-lg">
           {book.publishYear}
         </h2>
-        <h4 className="my-2 text-grey-500">{book._id}</h4>
         <div className="flex justify-start items-center gap-x-2">
-          <PiBookOpenTextLight className="text-red-300 text-2xl " />
-          <h2 className="my-1"> {book.title} </h2>
+          <PiBookOpenTextLight className="text-red-300 text-2xl mt-2" />
+          <b className="mt-2"> {book.title} </b>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <BiUserCircle className="my-1" />
+          <BiUserCircle className="my-1 text-2xl" />
           <h2 className="my-1">{book.author}</h2>
         </div>
-        <p className="mt-4">Any thing You want to show</p>
+        <div className="flex justify-start items-center gap-x-2">
+          <BiMovie className="text-red-300 text-2xl" />
+          <h2 className="my-1">{book.geners}</h2>
+        </div>
+        <b className="mt-4">Description,</b>
         <p className="my-2 relative" >
           {book.aboutBook}
         </p>
