@@ -4,7 +4,7 @@ export const createBook = async (req, res) => {
   try {
     if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook) {
       return res.status(200).send({
-        message: "send all required files: title, author, publishYear",
+        message: "send all required files: title, author, publishYear, aboutBook",
       });
     }
     const newBook = {
@@ -15,9 +15,8 @@ export const createBook = async (req, res) => {
     };
 
     const book = await Book.create(newBook);
-    return res.status(200).send(book);
+    return res.status(201).send(book);
   } catch (error) {
-    console.log(error.message);
     res.status(500).send({ message: error.message });
   }
 };
@@ -25,7 +24,6 @@ export const createBook = async (req, res) => {
 export const displayBook = async (req, res) => {
   try {
     const books = await Book.find({});
-    console.log(books);
 
     return res.status(200).json({
       count: books.length,

@@ -34,17 +34,6 @@ const CreateBook = () => {
       enqueueSnackbar("Book is not Created", { variant: "error" });
       console.log(error);
     }
-    // axios
-    //   .post(`http://localhost:5555/books`,data)
-    //   .then(() => {
-    //     setLoading(false);
-    //     navigate('/');
-    //   })
-    //   .catch((erroe) => {
-    //     setLoading(false);
-    //     alert('An error happened, please check console');
-    //     console.log(error);
-    //   })
   };
 
   return (
