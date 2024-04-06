@@ -26,7 +26,7 @@ const BooksTable = ({ books, searchQuery }) => {
             Author
           </th>
           <th className="border border-slate-600 rounded-md max-md:hidden">
-            Geners
+            Genres
           </th>
           <th className="border border-slate-600 rounded-md max-md:hidden">
             Publish Year

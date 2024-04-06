@@ -72,7 +72,7 @@ const CreateBook = () => {
           />
         </div>
         <div className="my-4">
-          <div className="text-xl mr-4 text-grey-500">Geners</div>
+          <div className="text-xl mr-4 text-grey-500">Genres</div>
           <input
             type="text"
             value={geners}
