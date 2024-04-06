@@ -15,16 +15,18 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { enqueueSnackbar } = useSnackbar();
 
-  const resHome = async () => {
-    try {
-      const response = await axios.get(
-        `https://mern-book-library-application.onrender.com/books`
-      );
-      setBooks(response.data.data);
-    } catch {
-      console.log(error);
-      setLoading(false);
-    }
+  const resHome = () => {
+    setLoading(true);
+    axios
+      .get(`https://mern-book-library-application.onrender.com/books`)
+      .then((response) => {
+        setBooks(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
