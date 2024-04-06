@@ -37,7 +37,7 @@ const DeleteBook = () => {
       <h1 className="text-3xl my-4 ">
         {loading ? <Spinner /> : ""}
         <div className="flex flex-col my-10 items-center border-2 border-sky-400 rounded-xl w-[350px] p-8 mx-auto">
-          <h3 className="text-2xl">
+          <h3 className="text-2xl text-center">
             Are you sure you want to delete this book
           </h3>
           <button
