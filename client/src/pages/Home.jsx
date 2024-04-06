@@ -17,7 +17,6 @@ const Home = () => {
 
   const resHome = async () => {
     try {
-      setLoading(true);
       const response = await axios.get(
         `https://mern-book-library-application.onrender.com/books`
       );
