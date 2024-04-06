@@ -10,10 +10,7 @@ const SearchFilter = ({ books, setSearchQuery}) => {
         setSearchText(query);
         setSearchQuery(query); // Pass the search query to the parent component
     };
-    // const handleSearchCriteria = (e) => {
-    //     const criteria = e.target.value;
-    //     setSearchCriteria(criteria);
-    // }
+
     return (
         <div className='p-4'>
             <div className='flex flex-row justify-evenly items-center  w-[250px]'>
@@ -31,15 +28,6 @@ const SearchFilter = ({ books, setSearchQuery}) => {
                         onChange={handleSearchChange}
                     />
                 </label>
-                {/* <select
-                    className="bg-white border border-slate-300 rounded-md py-2 pl-3 pr-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-                    // value={searchCriteria}
-                    onChange={handleSearchCriteria}
-                >
-                    <option value="title">Title</option>
-                    <option value="author">Author</option>
-                </select>
-                <TbFilterSearch /> */}
             </div>
         </div>
     )

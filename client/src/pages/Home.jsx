@@ -16,17 +16,16 @@ const Home = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const resHome = async () => {
-    setLoading(true);
-    axios
-      .get(`https://mern-book-library-application.onrender.com/books`)
-      .then((response) => {
-        setBooks(response.data.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://mern-book-library-application.onrender.com/books`
+      );
+      setBooks(response.data.data);
+    } catch {
+      console.log(error);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

@@ -10,15 +10,7 @@ const app = express();
 app.use(express.json());
 
 //middleware for handling CORS policy
-app.use(cors())
-//      or
-// app.use(
-//     cors({
-//         origin: 'ttp://llocalhost:3000',
-//         methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//         allowedHeaders: 'Content-Type',
-//     })
-// );
+app.use(cors());
 
 app.get('/', (req, res) => {
     console.log(req);
