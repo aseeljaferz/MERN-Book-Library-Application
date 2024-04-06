@@ -3,7 +3,7 @@ import { Book } from "../models/bookModel.js";
 export const createBook = async (req, res) => {
   try {
     if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook || !req.body.geners) {
-      return res.status(200).send({
+      return res.status(400).send({
         message: "send all required files: title, author, publishYear, aboutBook, geners",
       });
     }
