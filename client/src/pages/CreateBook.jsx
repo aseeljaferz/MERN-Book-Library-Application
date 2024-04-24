@@ -16,7 +16,7 @@ const CreateBook = () => {
   const { enqueueSnackbar } = useSnackbar();
   const handlseSaveBook = async () => {
     if (!title) {
-      enqueueSnackbar('Title is missing', { variant: 'error' });
+      alert('Title missing');
       return;
     }
     if (!author) {
@@ -84,13 +84,6 @@ const CreateBook = () => {
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
         </div>
-        {/* <div className="my-4">
-          <div className="text-xl mr-4 text-grey-500">Type</div>
-          <select name="" id="">
-            <option value="book">book</option>
-            <option value="magazine">magazine</option>
-          </select>
-        </div> */}
         <div className="my-4">
           <div className="text-xl mr-4 text-grey-500">Genres</div>
           <input
@@ -107,6 +100,17 @@ const CreateBook = () => {
             onChange={(e) => setAboutBook(e.target.value)}
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
+        </div>
+        <div className="my-4">
+          <div className="text-xl mr-4 text-grey-500">Type</div>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            className="border-2 border-grey-500 px-4 py-2 w-full"
+          >
+            <option value="book">Book</option>
+            <option value="magazine">Magazine</option>
+          </select>
         </div>
         <button className="p-2 bg-sky-300 m-8" onClick={handlseSaveBook}>
           Save
