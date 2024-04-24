@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const CreateBook = () => {
-  // const [type, setType] = useState('book');
+  const [type, setType] = useState('book');
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
@@ -89,7 +89,7 @@ const CreateBook = () => {
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
         </div>
-        {/* <div className="my-4">
+        <div className="my-4">
           <div className="text-xl mr-4 text-grey-500">Type</div>
           <select
             value={type}
@@ -99,7 +99,7 @@ const CreateBook = () => {
             <option value="book">Book</option>
             <option value="magazine">Magazine</option>
           </select>
-        </div> */}
+        </div>
         <div className="my-4">
           <div className="text-xl mr-4 text-grey-500">Genres</div>
           <input
