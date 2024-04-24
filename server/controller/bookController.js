@@ -2,9 +2,9 @@ import { Book } from "../models/bookModel.js";
 
 export const createBook = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook || !req.body.geners) {
+    if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook || !req.body.geners || !req.body.type) {
       return res.status(400).send({
-        message: "send all required files: title, author, publishYear, aboutBook, geners",
+        message: "send all required files: title, author, publishYear, aboutBook, geners, type",
       });
     }
     const newBook = {
@@ -12,7 +12,8 @@ export const createBook = async (req, res) => {
       author: req.body.author,
       publishYear: req.body.publishYear,
       aboutBook: req.body.aboutBook,
-      geners: req.body.geners
+      geners: req.body.geners,
+      type: req.body.type
     };
 
     const book = await Book.create(newBook);

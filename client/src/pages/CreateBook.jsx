@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const CreateBook = () => {
+  const [type, setType] = useState('book');
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
@@ -16,7 +17,7 @@ const CreateBook = () => {
   const { enqueueSnackbar } = useSnackbar();
   const handlseSaveBook = async () => {
     if (!title) {
-      alert('Title missing');
+      enqueueSnackbar('Please type the title', { variant: 'error' });
       return;
     }
     if (!author) {
@@ -27,6 +28,10 @@ const CreateBook = () => {
       enqueueSnackbar('Publish Year is missing', { variant: 'error' });
       return;
     }
+    if (!type) {
+      enqueueSnackbar('Please provide the Type', { variant: 'error' });
+      return;
+    }
     if (!geners) {
       enqueueSnackbar('Genres is missing', { variant: 'error' });
       return;
@@ -35,7 +40,7 @@ const CreateBook = () => {
       enqueueSnackbar('About Book is missing', { variant: 'error' });
       return;
     }
-    const data = { title, author, publishYear, geners, aboutBook };
+    const data = { title, author, publishYear, geners, aboutBook, type };
     try {
       const res = await axios.post(
         `https://mern-book-library-application.onrender.com/books`,
@@ -83,6 +88,17 @@ const CreateBook = () => {
             onChange={(e) => setPublishYear(e.target.value)}
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
+        </div>
+        <div className="my-4">
+          <div className="text-xl mr-4 text-grey-500">Type</div>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            className="border-2 border-grey-500 px-4 py-2 w-full"
+          >
+            <option value="book">Book</option>
+            <option value="magazine">Magazine</option>
+          </select>
         </div>
         <div className="my-4">
           <div className="text-xl mr-4 text-grey-500">Genres</div>
