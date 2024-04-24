@@ -71,6 +71,13 @@ const CreateBook = () => {
             className="border-2 border-grey-500 px-4 py-2 w-full"
           />
         </div>
+        {/* <div className="my-4">
+          <div className="text-xl mr-4 text-grey-500">Type</div>
+          <select name="" id="">
+            <option value="book">book</option>
+            <option value="magazine">magazine</option>
+          </select>
+        </div> */}
         <div className="my-4">
           <div className="text-xl mr-4 text-grey-500">Genres</div>
           <input

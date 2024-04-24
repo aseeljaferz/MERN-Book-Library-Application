@@ -2,11 +2,14 @@ import { Book } from "../models/bookModel.js";
 
 export const createBook = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.author || !req.body.publishYear || !req.body.aboutBook || !req.body.geners) {
-      return res.status(400).send({
-        message: "send all required files: title, author, publishYear, aboutBook, geners",
-      });
+    const requiredFields = ['title', 'author', 'publishYear', 'aboutBook', 'geners'];
+    const missingFields = requiredFields.filter(field => !(field in req.body));
+
+    if (missingFields.length > 0) {
+      const errorMessage = `Missing required fields: ${missingFields.join(', ')}`;
+      return res.status(400).send({ message: errorMessage });
     }
+
     const newBook = {
       title: req.body.title,
       author: req.body.author,
